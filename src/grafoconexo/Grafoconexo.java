@@ -42,25 +42,35 @@ public class Grafoconexo {
           imprimir(m);
           
           int [][] mult=m;
+          int [][] id= midentidad(n);
+          int [][] sum= mult;
+          int[][] suma =midentidad(n);
           System.out.print("\n");
           System.out.println("ingresar numeros de caminos a buscar:");
           int caminos = cin.nextInt();
           if(caminos == 0){
               mult=midentidad(n);
-          }
+          } 
           else{
           for(int i = 0 ; i<caminos ; i++){
               if(i == 0){
                   mult=m;
+                  sum=sumar(mult,id);
               }
               else if(i==1){
                   mult = multiplicar(m,m);
+                  sum=sumar(mult,sum);
               }
               else if(i >= 2){
                   mult = multiplicar(mult,m);
+                  sum=sumar(mult,sum);
               }
+               
           }
           }
+          
+          imprimir(sum);
+          
           
          System.out.println("cantidad de caminos entre cada vertice:");
          int contador =0;
@@ -144,6 +154,18 @@ public class Grafoconexo {
          
          return m;
      }
+     
+     public static int[][] sumar (int[][] m1,int[][] m2) {
+
+		int[][] resultado = new int[m1.length][m2[0].length];
+		
+		for (int x=0; x < resultado.length; x++) {
+            for (int y=0; y < resultado[x].length; y++) {
+            		resultado [x][y] = m1[x][y] + m2[x][y];
+            }
+		}
+		return resultado;
+	}
     
     
     
