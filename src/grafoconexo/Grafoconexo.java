@@ -49,7 +49,7 @@ public class Grafoconexo {
           System.out.println("ingresar numeros de caminos a buscar:");
           int caminos = cin.nextInt();
           if(caminos == 0){
-              mult=midentidad(n);
+              sum=midentidad(n);
           } 
           else{
           for(int i = 0 ; i<caminos ; i++){
