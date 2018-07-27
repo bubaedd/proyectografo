@@ -69,15 +69,15 @@ public class Grafoconexo {
           }
           }
           
-          imprimir(sum);
+          
           
           
          System.out.println("cantidad de caminos entre cada vertice:");
          int contador =0;
-         imprimir(mult);
-         for(int i=0; i<mult.length;i++){
-             for(int j=0; j<mult.length;j++){
-                 if(mult[i][j]==0){
+         imprimir(sum);
+         for(int i=0; i<sum.length;i++){
+             for(int j=0; j<sum.length;j++){
+                 if(sum[i][j]==0){
                  contador++;
                  }
              }
